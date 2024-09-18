@@ -21,7 +21,7 @@ int main()
 			case 5:c5=c[i];d5=d[i];break;
 		
 		}
-		if(js=='1'&&I<=2){
+	/*	if(js=='1'&&I<=2){
 			i--;
 			I++;
 			printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
@@ -35,7 +35,7 @@ int main()
 			case 5:c5=c[i];d5=d[i];break;
 			};}
 		i++;
-	} ;
+		} ;*/
 	printf("存放结束\n开始购买:\n");
 	i=0;
 	int B[5];
@@ -56,22 +56,22 @@ int main()
 			case 3:f=c3*D[i];pri+=f;break;
 			case 4:f=c4*D[i];pri+=f;break;
 			case 5:f=c5*D[i];pri+=f;break;
-		};
 		}
-		//if(js=='a'&&I<=2){
-		//	i--;
-		//	I++;
-		//	printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
-		//	scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
-		//	getchar();//吃掉回车键 
-		//	switch(b[i]){
-		//	case 1:c1=c[i];d1=d[i];break;
-		//	case 2:c2=c[i];d2=d[i];break;
-		//	case 3:c3=c[i];d3=d[i];break;
-		//	case 4:c4=c[i];d4=d[i];break;
-		//	case 5:c5=c[i];d5=d[i];break;
-		//	};}
-		i++;
+		}
+		/*if(js=='a'&&I<=2){
+			i--;
+			I++;
+			printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
+			scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
+			getchar();//吃掉回车键 
+			switch(b[i]){
+			case 1:c1=c[i];d1=d[i];break;
+			case 2:c2=c[i];d2=d[i];break;
+			case 3:c3=c[i];d3=d[i];break;
+			case 4:c4=c[i];d4=d[i];break;
+			case 5:c5=c[i];d5=d[i];break;
+			};}
+		i++;*/
 		
 	}
 	printf("您购买的货物金额为：%d\n", pri);
