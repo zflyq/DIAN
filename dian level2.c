@@ -1,18 +1,18 @@
 #include<stdio.h>
 
 
-int main() 
-{
+int main() {
 	int  b[5], c[5], d[5];
 	char a[5],js;
 	int c1,c2,c3,c4,c5,d1,d2,d3,d4,d5;
-	int i = 0,I=0;
+	int i = 0;
 	
-	while ( i < 5&&js!='N') {
+	while ( i < 5&&js!='N') 
+	{
 		
 		printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
-		scanf("%c%c%d %d %d", &a[i],&js ,&b[i],&c[i], &d[i]);
-		getchar();//吃掉回车键 
+		scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
+		getchar();//吃掉空格 
 		switch(b[i]){
 			case 1:c1=c[i];d1=d[i];break;
 			case 2:c2=c[i];d2=d[i];break;
@@ -21,35 +21,21 @@ int main()
 			case 5:c5=c[i];d5=d[i];break;
 		
 		}
-	/*	if(js=='1'&&I<=2){
-			i--;
-			I++;
-			printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
-			scanf("%c%c%d %d %d", &a[i],&js ,&b[i],&c[i], &d[i]);
-			getchar();//吃掉回车键 
-			switch(b[i]){
-			case 1:c1=c[i];d1=d[i];break;
-		case 2:c2=c[i];d2=d[i];break;
-			case 3:c3=c[i];d3=d[i];break;
-			case 4:c4=c[i];d4=d[i];break;
-			case 5:c5=c[i];d5=d[i];break;
-			};}
 		i++;
-		} ;*/
+	} ;
 	printf("存放结束\n开始购买:\n");
 	i=0;
 	int B[5];
-	char JS;
+	js='\0';
 	char hw;
 	int D[5];
 	static int pri=0;
-	while(i<5&&JS!='N'){
-		scanf("%c%c%d %d %d", &a[i],&JS, &b[i],&c[i], &d[i]);
+	while(i<5&&js!='N'){
+		scanf("%c%c%d %d",&hw,&js,&B[i],&D[i]);
 		getchar();
-		int f=0;
-		if(JS=='N'){break; 
+		if(js=='N'){break;
 		}
-		else{
+		int f=0;
 		switch(B[i]){
 			case 1:f=c1*D[i];pri+=f;break;
 			case 2:f=c2*D[i];pri+=f;break;
@@ -57,21 +43,7 @@ int main()
 			case 4:f=c4*D[i];pri+=f;break;
 			case 5:f=c5*D[i];pri+=f;break;
 		}
-		}
-		/*if(js=='a'&&I<=2){
-			i--;
-			I++;
-			printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
-			scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
-			getchar();//吃掉回车键 
-			switch(b[i]){
-			case 1:c1=c[i];d1=d[i];break;
-			case 2:c2=c[i];d2=d[i];break;
-			case 3:c3=c[i];d3=d[i];break;
-			case 4:c4=c[i];d4=d[i];break;
-			case 5:c5=c[i];d5=d[i];break;
-			};}
-		i++;*/
+		i++;
 		
 	}
 	printf("您购买的货物金额为：%d\n", pri);
@@ -81,7 +53,7 @@ int main()
 	do {
 		scanf_s("%d", &h);
 		g += h;
-	} while (g <= pri);
+	} while (g < pri);
 	printf("付钱成功！\n");
 	int change = g - pri;
 	printf("找零%d元", change);
