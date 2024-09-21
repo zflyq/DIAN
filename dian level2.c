@@ -3,9 +3,9 @@
 
 int main() {
 	int  b[5], c[5], d[5];
-	char a[5],js;
+	char a[5],js,kong;
 	int c1,c2,c3,c4,c5,d1,d2,d3,d4,d5;
-	int i = 0;
+	int i = 0,I=1;
 	
 	while ( i < 5&&js!='N') 
 	{
@@ -13,6 +13,16 @@ int main() {
 		printf("请输入您所摆放的货物种类、通道、价格、数量：\n");
 		scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
 		getchar();//吃掉空格 
+		if(js=='a'&&I<=3){
+			I++;
+			while((kong=getchar())!='\n');
+			
+			printf("已退回。\n请输入您所摆放的货物种类、通道、价格、数量：\n");
+			
+			scanf("%c%c%d %d %d", &a[i],&js, &b[i],&c[i], &d[i]);
+			getchar();
+			
+		}
 		switch(b[i]){
 			case 1:c1=c[i];d1=d[i];break;
 			case 2:c2=c[i];d2=d[i];break;
@@ -26,7 +36,7 @@ int main() {
 	printf("存放结束\n开始购买:\n");
 	i=0;
 	int B[5];
-	js='\0';
+	js='1';
 	char hw;
 	int D[5];
 	static int pri=0;
@@ -35,6 +45,7 @@ int main() {
 		getchar();
 		if(js=='N'){break;
 		}
+		
 		int f=0;
 		switch(B[i]){
 			case 1:f=c1*D[i];pri+=f;break;
